@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DatabaseScripts\Scripts\**" />
+    <EmbeddedResource Remove="DatabaseScripts\Scripts\**" />
+    <None Remove="DatabaseScripts\Scripts\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="DatabaseScripts\StoredProcedures\Commands\Script0000 - InsertNewUser.sql" />
+    <None Remove="DatabaseScripts\StoredProcedures\Queries\ActiveFriendships\GetFriendship\GetActiveFriendshipByPairIds.sql" />
+    <None Remove="DatabaseScripts\StoredProcedures\Queries\ActiveFriendships\Script0101 - GetAllActiveFriendshipsByUserIdAndType.sql" />
+    <None Remove="DatabaseScripts\Tables\Script0001 - UserIntToGuidMapping.sql" />
+    <None Remove="DatabaseScripts\Tables\Script0003 - ActiveFriendshipsPairs.sql" />
+  </ItemGroup>
+<ItemGroup>
+  <None Include="DatabaseScripts\**\*.sql">
+    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+  </None>
+</ItemGroup>
+  <ItemGroup>
+    <Compile Include="DatabaseScripts\StoredProcedures\Commands\Script0000 - InsertNewUser.sql" />
+    <Compile Include="DatabaseScripts\StoredProcedures\Queries\ActiveFriendships\GetAllFriendships\Script0021 - GetAllActiveFriendshipsByUserIdAndType.sql" />
+    <Compile Include="DatabaseScripts\StoredProcedures\Queries\ActiveFriendships\GetFriendship\GetActiveFriendshipByPairIds.sql" />
+    <Compile Include="DatabaseScripts\Tables\Script0001 - UserIntToGuidMapping.sql" />
+    <Compile Include="DatabaseScripts\Tables\Script0003 - ActiveFriendshipsPairs.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="8.0.0" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+    <PackageReference Include="Throw" Version="1.4.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\SharedKernel\SharedKernel.csproj" />
+    <ProjectReference Include="..\Friendships.Read.Application\Friendships.Read.Application.csproj" />
+  </ItemGroup>
+
+</Project>
