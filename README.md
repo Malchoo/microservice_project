@@ -209,30 +209,4 @@ This microservice is optimized for read operations, using Dapper and raw SQL for
 
 The SharedKernel contains common code and abstractions used across all microservices. This promotes code reuse and ensures consistency in the implementation of cross-cutting concerns.
 
-## Getting Started
-
-(Here you would include instructions on how to set up and run the project locally, including any prerequisites, configuration steps, and commands to start the microservices.)
-
-## Development
-
-(This section would include information for developers on how to contribute to the project, coding standards, and any development workflows or tools used.)
-
-## Testing
-
-(Describe the testing strategy for the microservices, including unit tests, integration tests, and any end-to-end testing approaches.)
-
-## Deployment
-
-(Provide information on how to deploy the microservices, including any containerization or orchestration tools used.)
-
-## Contributing
-
-(Include guidelines for how others can contribute to the project, if applicable.)
-
-## License
-
-(Specify the license under which the project is released.)
-
----
-
 **Note**: This project is for presentation purposes and demonstrates architectural concepts. It is not intended to be a fully functional production system.
